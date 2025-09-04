@@ -1,0 +1,11 @@
+// test.js
+const config = require("./config.json");
+const setting = require("./setting.json");
+const zkproof = require("./zkproof.json");
+const index = require("./index.json");
+
+console.log("=== Testing JSON Files ===");
+console.log("Config:", config);
+console.log("Setting:", setting);
+console.log("ZKProof:", zkproof);
+console.log("Index:", index);
