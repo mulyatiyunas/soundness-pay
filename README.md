@@ -47,78 +47,31 @@ Soundness Pay ensures that every payment transaction is **verified, immutable, a
 
 ## Setup & Installation
 
-1. Prepare your environment
+How to Run the Soundness-Pay Project
 
-Make sure Node.js ≥18 is installed:
+Clone repository
 
-node -v
-npm -v
+git clone https://github.com/mulyatiyunas/soundness-pay.git
+cd soundness-pay
 
+Install dependencies
 
-Create a .env.local file (if it doesn’t exist) and fill in the required environment variables, for example:
-
-WALLET_PRIVATE_KEY=your_private_key_here
-API_URL=http://localhost:3000
-
-
-Adjust according to the environment variables your backend scripts need.
-
-2. Navigate to the project directory
-cd /workspaces/soundness-pay
-
-3. Install project dependencies
 npm install
 
+Run test (optional, to check JSON & config)
 
-Installs all dependencies listed in package.json.
+npm test
 
-The node_modules folder is ignored by Git.
+This script will read config.json, settings.json, zkproof.json, and index.json to ensure there are no errors.
 
-4. Install global tools (Circom & SnarkJS)
-npm install -g circom snarkjs
+Run the application in development mode
 
-
-Add sudo on Linux/macOS if you encounter permission errors.
-
-Verify installation:
-
-circom --version
-snarkjs --help
-
-5. Run proof setup
-npm run prove:setup
-
-
-This will compile the circuit and generate the proof file at circuits/build/proof.json.
-
-6. Upload the proof to the backend
-node backend/uploadProof.js wallet.json circuits/build/proof.json
-
-
-wallet.json → Contains your wallet credentials (must match .env.local if used).
-
-proof.json → Output from the previous step.
-
-If successful, the proof will be uploaded and ready for use.
-
-7. Run the development server
 npm run dev
 
+The application will run at http://localhost:3000
 
-The server usually runs at http://localhost:3000.
+Build for production
 
-If you encounter errors, check .env.local and ensure circuits/build/proof.json exists.
+npm run build
+npm start
 
-8. Additional tips
-
-Keep wallet and .env.local secure. Do not commit them to Git.
-
-If the proof file is missing, rerun:
-
-npm run prove:setup
-
-
-If you encounter module not found errors, try reinstalling dependencies:
-
-rm -rf node_modules
-npm install
