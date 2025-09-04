@@ -1,77 +1,64 @@
+# 🌐 Soundness Pay dApp
 
-
-# Soundness Pay
-
-**Soundness Pay** is a reliable and secure payment system prototype leveraging zero-knowledge proofs to ensure transaction integrity, privacy, and trust.
-
----
-
-## Table of Contents
-
-- [Project Overview](#project-overview)  
-- [Repository Structure](#repository-structure)  
-- [Features](#features)  
-- [Setup & Installation](#setup--installation)  
-- [Generate Proof & Upload](#generate-proof--upload)  
-- [Run Development Server](#run-development-server)  
-- [Usage Example](#usage-example)  
-- [Notes](#notes)  
-- [Contributing](#contributing)  
+This project is a Decentralized Application (dApp) based on [Next.js](https://nextjs.org/) with Web3 and Arweave integration.
+This repo also hosts several JSON configuration files (`config.json`, `setting.json`, `zkproof.json`, etc.) used for testing.
 
 ---
 
-## Project Overview
-
-Soundness Pay ensures that every payment transaction is **verified, immutable, and private**, while remaining fully auditable. The system uses **Circom** and **SnarkJS** to generate and verify zero-knowledge proofs for payment correctness without revealing sensitive data.
-
----
-
-## Repository Structure
-/workspaces/soundness-pay/
-├── frontend/ # Frontend application
-├── backend/ # Backend API and proof handling
-├── circuits/ # Zero-knowledge circuits
-├── package.json # Project dependencies
-└── README.md # Project documentation
+## 🚀 Features
+- ⚡ Next.js 13 Framework
+- 🔗 Web3.js & WalletConnect Integration
+- 🗄️ Decentralized storage with Arweave
+- 🧪 Testing script for JSON file validation
 
 ---
 
-## Features
+## 📦 Installation & Running
 
-- Real-time transaction verification using zero-knowledge proofs  
-- Secure and private payment processing  
-- Audit logs for each transaction  
-- Easy integration with frontend and backend systems  
-
----
-
-## Setup & Installation
-
-How to Run the Soundness-Pay Project
-
-Clone repository
-
+### 1. Clone Repository
+```bash
 git clone https://github.com/mulyatiyunas/soundness-pay.git
 cd soundness-pay
-
-Install dependencies
-
+### 2. Install Dependencies
 npm install
-
-Run test (optional, to check JSON & config)
-
+### 3. Run Testing (optional)
 npm test
-
-This script will read config.json, settings.json, zkproof.json, and index.json to ensure there are no errors.
-
-Run the application in development mode
-
+### 4. Run Server Development
 npm run dev
 
-The application will run at http://localhost:3000
+The application will run on:
 
-Build for production
+http://localhost:3000
+(default)
 
+http://localhost:3001
+if port 3000 is already in use
+
+### 5. Build for Production
 npm run build
 npm start
 
+## 📦 Struktur Folder
+soundness-pay/
+├── circuits/ # zk-SNARK circuit files
+├── pages/ # Next.js pages
+│ └── index.js # home page
+├── config.json # dApp configuration
+├── setting.json # additional settings
+├── zkproof.json # zk-SNARK proof data
+├── index.json # index data
+├── test.json # additional testing files
+├── package.json # project configuration
+└── README.md # documentation
+
+⚠️ Note
+
+At least Node.js v18 is recommended.
+
+If port 3000 is already in use, Next.js automatically switches to 3001.
+
+To run the test script, ensure there is a test.js file in the root.
+
+👨‍💻 Author
+
+mulyatiyunas
